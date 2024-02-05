@@ -1,0 +1,52 @@
+Schachbrett_Array:
+
+  Schachbrett := 2D-Array mit 8x8 großen Feldern
+
+  public Schachbrett_Array(){
+    getSchachbrett();
+  }
+
+
+  setzeFeldfarbe( row, column, farbe){
+    farbe wird im Schachbrett im feld row, column gesetzt.
+  }
+
+  public int [][] getSchachbrett(){
+
+    return schachbrett;
+  }
+
+ ------------
+
+
+public class Schachbrett_Logik
+
+  Objekt schachbrett von Schachbrett_Array wird instanzietrt
+
+   erstelleSchachbrett := gibt ein 2D-Array zurück mit der Größe 8x8
+        int [][] field = new int[8][8];
+
+
+
+        for(int i=0; i< field.length; i++){
+            for(int j=0; j < field[i].length;j++){
+                int farbe = berechneFeldfarbe(i,j);
+                schachbrett.setzeFeldfarbe(i,j,farbe);
+            }
+        }
+        schachbrett.drawSchachBrett();
+        return schachbrett;
+    }
+
+    public int berechneFeldfarbe(int row, int column){
+        if((row + column) % 2 == 0){
+            return 1;
+        }
+        else {
+            return 0;
+        }
+    }
+
+}
+
+
